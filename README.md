@@ -1,6 +1,12 @@
+CMPE281 - Team Hackathon Project - Group #7
+
+# Team members
+
+Kelly A. Aguirre, Aishwarya Keerty, Bhavan Pandya, Chen Shi
+
 # Starbucks-Portal
 
-A multi-cloud Starbucks Drink Ordering portal based on the Restbucks CRUD REST API design. 
+A multi-cloud Starbucks Drink Ordering Portal based on the Restbucks CRUD REST API design. 
 
 # Components:
 
