@@ -2,7 +2,7 @@ CMPE281 - Team Hackathon Project - Group #7
 
 # Team members
 
-Kelly A. Aguirre, Aishwarya Keerty, Bhavan Pandya, Chen Shi
+Kelly Alvarez Aguirre, Aishwarya Keerty, Bhavan Pandya, Chen Shi
 
 # Starbucks-Portal
 
