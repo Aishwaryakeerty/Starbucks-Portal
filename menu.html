@@ -52,6 +52,9 @@
             color: white;
             cursor: pointer;
         }
+        .icon-plus{
+            content:''
+        }
 
         .show {
             display: block !important;
@@ -98,7 +101,7 @@
             <br>
             <br>
             <a id="showAll">All</a><br>
-            <a id="showEspresso">+ Espresso Beverages</a><br>
+            <span id="signEspresso" class="glyphicon glyphicon-plus" style="font-size:11px"></span><a id="showEspresso">Espresso Beverages</a><br>
             <ul id="espressoList" class="hide">
                 <li>Caffe Americano</li>
                 <li>Caffe Latte</li>
@@ -130,7 +133,7 @@
                 <li>Skinny Flavored Latte</li>
                 <li>White Chocolate Mocha</li>
             </ul>
-            <a id="showBrewed" >+ Brewed Coffee</a><br>
+            <span id="signBrewed" class="glyphicon glyphicon-plus" style="font-size:11px"></span><a id="showBrewed" >Brewed Coffee</a><br>
             <ul id="brewedList" class="hide">
                 <li>Caffe Misto</li>
                 <li>Clover Brewed Coffee</li>
@@ -554,9 +557,14 @@
             document.getElementById('espresso-beverages').classList.add('show');
 
             if (document.getElementById('espressoList').classList.contains('show')) {
+                document.getElementById('signEspresso').classList.remove('glyphicon-minus');
+                document.getElementById('signEspresso').classList.add('glyphicon-plus');
                 document.getElementById('espressoList').classList.remove('show');
                 document.getElementById('espressoList').classList.add('hide');
             } else {
+
+                document.getElementById('signEspresso').classList.remove('glyphicon-plus');
+                document.getElementById('signEspresso').classList.add('glyphicon-minus');
                 document.getElementById('espressoList').classList.remove('hide');
                 document.getElementById('espressoList').classList.add('show');
             }
@@ -573,9 +581,15 @@
             document.getElementById('espresso-beverages').classList.add('hide');
 
             if (document.getElementById('brewedList').classList.contains('show')) {
+                document.getElementById('signBrewed').classList.remove('glyphicon-minus');
+                document.getElementById('signBrewed').classList.add('glyphicon-plus');
+
                 document.getElementById('brewedList').classList.remove('show');
                 document.getElementById('brewedList').classList.add('hide');
             } else {
+
+                document.getElementById('signBrewed').classList.remove('glyphicon-plus');
+                document.getElementById('signBrewed').classList.add('glyphicon-minus');
                 document.getElementById('brewedList').classList.remove('hide');
                 document.getElementById('brewedList').classList.add('show');
             }
