@@ -45,7 +45,7 @@
   </style>
 </head>
 
-<body ng-app="starbucks" ng-controller="testController">
+<body ng-app="starbucks">
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -59,13 +59,13 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="/menu">Menu</a></li>
-          <li><a href="/orders">Order History</a></li>
-          <li><a href="/cart">Cart</a></li>
+          <li class="active"><a ng-href="/">Home</a></li>
+          <li><a ng-href="/menu">Menu</a></li>
+          <li><a ng-href="/orders">Order History</a></li>
+          <li><a ng-href="/cart">Cart</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a ng-href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
       </div>
     </div>
@@ -85,8 +85,8 @@
       <p style="padding-top:2%">Join Starbucks Rewards™ to earn Gold level benefits like free drinks and food, get free refills, pay and order with
         your phone, and more.</p>
       <div style="padding-top:2%">
-        <button type="button" class="btn btn-md btn-default active" style="width:20%">Join Now</button>
-        <button type="button" class=" btn btn-md btn-default" style="width:20%; margin-left:10px;">Sign In</button>
+        <a ng-href="/signup"><button type="button" class="btn btn-md btn-default active" style="width:20%">Join Now</button></a>
+        <a ng-href="/login"><button type="button" class=" btn btn-md btn-default" style="width:20%; margin-left:10px;">Sign In</button></a>
       </div>
     </div>
   </div>
