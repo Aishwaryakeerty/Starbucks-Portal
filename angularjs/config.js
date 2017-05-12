@@ -5,6 +5,24 @@ starbucks.config(function($routeProvider) {
     .when("/", {
         templateUrl : "../starbucks_portal.html"
     })
+    .when("/home", {
+        templateUrl : "../starbucks_portal.html"
+    })
+    .when("/login", {
+        templateUrl : "../login.html"
+    })
+    .when("/signup", {
+        templateUrl : "../signup.html"
+    })
+    .when("/menu", {
+        templateUrl : "../menu.html"
+    })
+    .when("/orders", {
+        templateUrl : "../order_history.html"
+    })
+    .when("/cart", {
+        templateUrl : "../cart.html"
+    })
     .otherwise({
         redirectTo: '/'
     });
