@@ -4,7 +4,7 @@ starbucks.controller('loginController', function ($scope) {
 			if($scope.username == "bhavan@bhavan.com" && $scope.password == "bhavan")
 			{
 				alert('Login successful.');
-				window.location = "starbucks-portal.html";
+				window.location = "/";
 			}
 		}
 });
