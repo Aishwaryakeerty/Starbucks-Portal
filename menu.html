@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="angularjs/config.js" ></script>
+    <script src="angularjs/menuController.js" ></script>
     <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
@@ -64,7 +67,7 @@
         }
     </style>
 </head>
-<body>
+<body ng-app="starbucks" ng-controller="menuController">
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -152,181 +155,155 @@
             </div>
             <br>
             <!-- Need fix , implement angular on this-->
-            <div class="col-sm-12" style="margin-bottom:20px">
+            <div class="col-sm-12" style="margin-bottom:20px" ng-repeat="x in menu">
                 <div class="image col-sm-3">
-                    <img src="images/products/caffe_americano.jpg" height="150" width="150"/>
-                    <span class="label">Caffee Americano</span>
+                    <img ng-src="{{x[0].img}}" height="150" width="150"/>
+                    <div class="col-sm-12">
+                    <label>{{x[0].name}}</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Quantity: </label>
+                        <select ng-model = "qty0">
+                          <option value="s1" selected="selected">1</option>
+                          <option value="s2">2</option>
+                          <option value="s3">3</option>
+                          <option value="s4">4</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Milk: </label>
+                        <select ng-model="milk0">
+                            <option value="whole">Whole</option>
+                            <option value="percenet2">2%</option>
+                            <option value="percenet1">1%</option>
+                            <option value="no_fat">No Fat</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Size: </label>
+                        <select ng-model="size0">
+                            <option value="large">Large</option>
+                            <option value="medium">Medium</option>
+                            <option value="small">Small</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="button" class="btn btn-default" ng-click="addCart(x[0].name,size0,milk0,qty0);" value="Add to Cart">
+                        <input type="button" class="btn btn-default" ng-click="order(x[0].name,size0,milk0,qty0);" value="Order Now">
+                    </div>
                 </div>
 
                 <div class="image col-sm-3">
-                    <img src="images/products/caffe_latte.jpg" height="150" width="150"/>
-                    <span class="label">Caffee Latte</span>
+                    <img ng-src="{{x[1].img}}" height="150" width="150"/>
+                   <div class="col-sm-12">
+                    <label>{{x[1].name}}</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Quantity: </label>
+                        <select ng-model = "qty1">
+                          <option value="s1" selected="selected">1</option>
+                          <option value="s2">2</option>
+                          <option value="s3">3</option>
+                          <option value="s4">4</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Milk: </label>
+                        <select ng-model="milk1">
+                            <option value="whole">Whole</option>
+                            <option value="percenet2">2%</option>
+                            <option value="percenet1">1%</option>
+                            <option value="no_fat">No Fat</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Size: </label>
+                        <select ng-model="size1">
+                            <option value="large">Large</option>
+                            <option value="medium">Medium</option>
+                            <option value="small">Small</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="button" class="btn btn-default" ng-click="addCart(x[1].name,size1,milk1,qty1);" value="Add to Cart">
+                        <input type="button" class="btn btn-default" ng-click="order(x[1].name,size1,milk1,qty1);" value="Order Now">
+                    </div>
                 </div>
 
                 <div class="image col-sm-3">
-                    <img src="images/products/caffe_mocha.jpg" height="150" width="150"/>
-                    <span class="label">Caffee Mocha</span>
+                    <img ng-src="{{x[2].img}}" height="150" width="150"/>
+                    <div class="col-sm-12">
+                    <label>{{x[2].name}}</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Quantity: </label>
+                        <select ng-model = "qty2">
+                          <option value="s1" selected="selected">1</option>
+                          <option value="s2">2</option>
+                          <option value="s3">3</option>
+                          <option value="s4">4</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Milk: </label>
+                        <select ng-model="milk2">
+                            <option value="whole">Whole</option>
+                            <option value="percenet2">2%</option>
+                            <option value="percenet1">1%</option>
+                            <option value="no_fat">No Fat</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Size: </label>
+                        <select ng-model="size2">
+                            <option value="large">Large</option>
+                            <option value="medium">Medium</option>
+                            <option value="small">Small</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="button" class="btn btn-default" ng-click="addCart(x[2].name,size2,milk2,qty2);" value="Add to Cart">
+                        <input type="button" class="btn btn-default" ng-click="order(x[2].name,size2,milk2,qty2);" value="Order Now">
+                    </div>
                 </div>
 
                 <div class="image col-sm-3">
-                    <img src="images/products/cappuccino.jpg" height="150" width="150"/>
-                    <span class="label">Cappuccino</span>
+                    <img ng-src="{{x[3].img}}" height="150" width="150"/>
+                    <div class="col-sm-12">
+                    <label>{{x[3].name}}</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Quantity: </label>
+                        <select ng-model = "qty3">
+                          <option value="s1" selected="selected">1</option>
+                          <option value="s2">2</option>
+                          <option value="s3">3</option>
+                          <option value="s4">4</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Milk: </label>
+                        <select ng-model="milk3">
+                            <option value="whole">Whole</option>
+                            <option value="percenet2">2%</option>
+                            <option value="percenet1">1%</option>
+                            <option value="no_fat">No Fat</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <label>Size: </label>
+                        <select ng-model="size3">
+                            <option value="large">Large</option>
+                            <option value="medium">Medium</option>
+                            <option value="small">Small</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="button" class="btn btn-default" ng-click="addCart(x[3].name,size3,milk3,qty3);" value="Add to Cart">
+                        <input type="button" class="btn btn-default" ng-click="order(x[3].name,size3,milk3,qty3);" value="Order Now">
+                    </div>
                 </div>
             </div>
-
-            <div class="col-sm-12" style="margin-bottom:20px">
-                <div class="image col-sm-3">
-                    <img src="images/products/caramel_macchiato.jpg" height="150" width="150"/>
-                    <span class="label">Caramel Macchiato</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/caffe_latte.jpg" height="150" width="150"/>
-                    <span class="label">Caffee Latte</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/espresso.jpg" height="150" width="150"/>
-                    <span class="label">Espresso</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/espresso_con_panna.jpg" height="150" width="150"/>
-                    <span class="label">Espresso con Panna</span>
-                </div>
-            </div>
-
-            <div class="col-sm-12" style="margin-bottom:20px">
-                <div class="image col-sm-3">
-                    <img src="images/products/espresso_macchiato.jpg" height="150" width="150"/>
-                    <span class="label">Espresso Macchiato</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/flavored_latte.jpg" height="150" width="150"/>
-                    <span class="label">Flavored Latte</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_caffee_americano.jpg" height="150" width="150"/>
-                    <span class="label">Iced Caffee Americano</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_caffee_latte.jpg" height="150" width="150"/>
-                    <span class="label">Iced Caffee Latte</span>
-                </div>
-            </div>
-
-            <div class="col-sm-12" style="margin-bottom:20px">
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_caffee_mocha.jpg" height="150" width="150"/>
-                    <span class="label">Iced Caffee Mocha</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_caramel_macchiato.jpg" height="150" width="150"/>
-                    <span class="label">Iced Caramel Macchiato</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_flavored_latte.jpg" height="150" width="150"/>
-                    <span class="label">Iced Flavored Latte</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_peppermint_mocha.jpg" height="150" width="150"/>
-                    <span class="label">Iced Peppermint Mocha</span>
-                </div>
-            </div>
-
-            <div class="col-sm-12" style="margin-bottom:20px">
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_peppermint_white_chocolate_mocha.jpg" height="150" width="150"/>
-                    <span class="label">Iced Peppermint White Chocolate Mocha</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_salted_caramel_mocha.jpg" height="150" width="150"/>
-                    <span class="label">Iced Salted Caramel Mocha</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_skinny_flavored_latte.jpg" height="150" width="150"/>
-                    <span class="label">Iced Skinny Flavored Latte</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_white_chocolate_mocha.jpg" height="150" width="150"/>
-                    <span class="label">Iced White Chocolate Mocha</span>
-                </div>
-            </div>
-
-            <div class="col-sm-12" style="margin-bottom:20px">
-                <div class="image col-sm-3">
-                    <img src="images/products/peppermint_mocha.jpg" height="150" width="150"/>
-                    <span class="label">Peppermint Mocha</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/salted_caramel_mocha.jpg" height="150" width="150"/>
-                    <span class="label">Salted Caramel Mocha</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/starbucks_iced_cinnamon_dolce_latte.jpg" height="150" width="150"/>
-                    <span class="label">Iced Cinnamon Dolce Latte</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/pumpkin_spice_latte.png" height="150" width="150"/>
-                    <span class="label">Pumpkin Spice Latte</span>
-                </div>
-            </div>
-            <div class="col-sm-12" style="margin-bottom:20px">
-                <div class="image col-sm-3">
-                    <img src="images/products/pupmkin_spice_creme.png" height="150" width="150"/>
-                    <span class="label">Pumpkin Spice Creme</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/caffe_misto.jpg" height="150" width="150"/>
-                    <span class="label">Caffee Misto</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/coffee_traveler.jpg" height="150" width="150"/>
-                    <span class="label">Coffee Traveler</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/decaf_pike_place_roast.jpg" height="150" width="150"/>
-                    <span class="label">Decaf Pike Place Roast</span>
-                </div>
-            </div>
-            <div class="col-sm-12" style="margin-bottom:20px">
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_coffee_brewed_coffee.jpg" height="150" width="150"/>
-                    <span class="label">Iced Coffee</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/iced_coffee_with_milk_brewed_coffee.jpg" height="150" width="150"/>
-                    <span class="label">Iced Coffee with Milk</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/pike_place_roast.jpg" height="150" width="150"/>
-                    <span class="label">Pike Place Roast</span>
-                </div>
-
-                <div class="image col-sm-3">
-                    <img src="images/products/clover_brewed_coffee.jpg" height="150" width="150"/>
-                    <span class="label">Clover Brewed Coffee</span>
-                </div>
-            </div>
-        </div>
-
         <div id="espresso-beverages" class="col-sm-9 hide">
 
             <div class="col-sm-12 text-center" style="line-height: 1; padding-bottom: 20px">
@@ -608,4 +585,3 @@
 
 </body>
 </html>
-

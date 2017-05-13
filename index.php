@@ -1,1 +1,1 @@
-<?php header( 'Location: /starbucks_portal.html' ) ;  ?>
+<?php header( 'Location: /startbucks_portal.html' ) ;  ?>
