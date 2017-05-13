@@ -34,6 +34,14 @@
           <li><a ng-href="index.html#/menu">Menu</a></li>
           <li><a ng-href="index.html#/orders">Order History</a></li>
           <li><a ng-href="index.html#/cart">Cart</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Store<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ng-click= "OnItemClick('San Francisco')">San Francisco</a></li>
+              <li><a ng-click= "OnItemClick('San Jose')">San Jose</a></li>
+              <li><a ng-click= "OnItemClick('Santa Clara')">Santa Clara</a></li>
+            </ul>
+        </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a ng-href="index.html#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
