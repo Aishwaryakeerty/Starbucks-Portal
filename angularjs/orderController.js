@@ -1,5 +1,7 @@
 ﻿starbucks.controller('orderController', function ($scope, $http, $rootScope) {
-    $http({
+    if($rootScope.store == null || $rootScope.store == "")
+        $rootScope.store = "sf";
+        $http({
         method: "GET",
         url: "http://ec2-54-186-173-97.us-west-2.compute.amazonaws.com:8000/" + $rootScope.store + "/orders",
     }).success(function (data) {
