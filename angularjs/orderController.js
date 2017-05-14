@@ -12,7 +12,6 @@
     $scope.mysize = true;
 
     $scope.updateOrder = function (index, index1) {
-        alert(index);
         if ($scope.mymilk == true) {
             $scope.myqty = false;
             $scope.mymilk = false;
