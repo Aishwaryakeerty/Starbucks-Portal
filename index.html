@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,8 +16,9 @@
     <script src="angularjs/cartController.js"></script>
     <script src="angularjs/loginController.js"></script>
     <script src="angularjs/menuController.js"></script>
+    <script src="angularjs/orderController.js"></script>
 </head>
-<body ng-app ="starbucks">
+<body ng-app ="starbucks" ng-controller="homeController">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -35,16 +36,16 @@
           <li><a ng-href="index.html#/orders">Order History</a></li>
           <li><a ng-href="index.html#/cart">Cart</a></li>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Store<span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown">Store<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a ng-click= "OnItemClick('San Francisco')">San Francisco</a></li>
-              <li><a ng-click= "OnItemClick('San Jose')">San Jose</a></li>
-              <li><a ng-click= "OnItemClick('Santa Clara')">Santa Clara</a></li>
+              <li><a ng-click= "OnItemClick('sf')">San Francisco</a></li>
+              <li><a ng-click= "OnItemClick('sj')">San Jose</a></li>
+              <li><a ng-click= "OnItemClick('sc')">Santa Clara</a></li>
             </ul>
         </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a ng-href="index.html#/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a ng-href="index.html#/login"><span class="glyphicon glyphicon-log-in"></span>{{login1}}</a></li>
         </ul>
       </div>
     </div>

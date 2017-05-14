@@ -62,17 +62,19 @@ starbucks.controller('menuController', function ($scope,$http,$rootScope) {
 		]);
 	$scope.addCart = function(name,size,milk,qty)
 	{
-		if($rootScope.cart == null || $rootScope.cart == {})
-			$rootScope.cart = [{"qty":qty.charAt(1),"name":name,"milk":milk,"size":size}];
-		else
-			$rootScope.cart.push({"qty":qty.charAt(1),"name":name,"milk":milk,"size":size});
+	    if ($rootScope.cart == null || $rootScope.cart == {}) {
+	        $rootScope.cart = [{ "qty": qty.charAt(1), "name": name, "milk": milk, "size": size }];
+	    }
+	    else
+	        $rootScope.cart.push({ "qty": qty.charAt(1), "name": name, "milk": milk, "size": size });
+	    alert('Item added to cart.');
 	};
 
 	$scope.order = function(name,size,milk,qty)
 	{
-		$http({
+	    $http({
 			method: "POST",
-			url: "http://ec2-54-186-173-97.us-west-2.compute.amazonaws.com:8000/sf/order",
+			url: "http://ec2-54-186-173-97.us-west-2.compute.amazonaws.com:8000/"+$rootScope.store+"/order",
 			data:{
 				"location":"take-out",
 				"items":[{"qty":qty.charAt(1),"name":name,"milk":milk,"size":size}]

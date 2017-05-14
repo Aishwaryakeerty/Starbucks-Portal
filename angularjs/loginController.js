@@ -1,11 +1,11 @@
-starbucks.controller('loginController', function ($scope,$rootScope) {
-		$scope.login = function()
+starbucks.controller('loginController', function ($scope, $rootScope) {
+    	$scope.login = function()
 		{
 			if($scope.username == "bhavan@bhavan.com" && $scope.password == "bhavan")
 			{
-				$rootScope.login = "Bhavan";
+				$rootScope.login_name = "Bhavan";
 				alert('Login successful.');
-				window.location = "/";
+				window.location = "/index.html#/";
 			}
 		}
 });
