@@ -13,8 +13,7 @@ A multi-cloud Starbucks Drink Ordering Portal based on the Restbucks CRUD REST A
 Portal:  Heroku Based Web Application from which Starbucks Orders and be placed and viewed.  Orders are multi-tenant such that each tenant is a different Starbucks Store. 
 
 # Language, Framework & Tools: 
-HTML, Javascript, Angular JS
-
+HTML, Javascript, Angular JS, Java, Node.js, MongoDB
 
 
 # Tenant API Back-Ends
