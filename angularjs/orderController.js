@@ -3,7 +3,7 @@
         $rootScope.store = "sf";
         $http({
         method: "GET",
-        url: "http://ec2-54-186-173-97.us-west-2.compute.amazonaws.com:8000/" + $rootScope.store + "/orders",
+        url: "http://54.214.106.54:8000/" + $rootScope.store + "/orders",
     }).success(function (data) {
         $scope.orders = data;
     }).error(function (error) {
@@ -66,7 +66,7 @@
     $scope.pay = function (index) {
         $http({
             method: "POST",
-            url: "http://ec2-54-186-173-97.us-west-2.compute.amazonaws.com:8000/" + $rootScope.store + "/order/" + $scope.orders[index].id + "/pay"
+            url: "http://54.214.106.54:8000/" + $rootScope.store + "/order/" + $scope.orders[index].id + "/pay"
         }).success(function (data) {
             $scope.orders[index].status = "PAID";
             alert('Paid Successfully');
