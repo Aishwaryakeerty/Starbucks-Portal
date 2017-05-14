@@ -24,10 +24,10 @@
                 alert("Update Successful");
             else
                 alert('Update Can\'t be performed');
-            /*
+            
             $http({
                 method: "PUT",
-                url: "http://ec2-54-186-173-97.us-west-2.compute.amazonaws.com:8000/" + $rootScope.store + "/order" + $scope.orders[index].id,
+                url: "http://54.214.106.54:8000/" + $rootScope.store + "/order" + $scope.orders[index].id,
                 data: {
                     "location": "take-out",
                     "items": $rootScope.cart
@@ -36,7 +36,7 @@
                 alert('Your order placed successfully.')
             }).error(function (error) {
                 alert('error');
-            });*/
+            });
             $scope.myqty = true;
             $scope.mymilk = true;
             $scope.mysize = true;
@@ -49,18 +49,17 @@
         }
         else
             alert("Order Can't be deleted");
-        /*
         $http({
             method: "DELETE",
             headers: {'X-Custom-Header':'value'},
-            url: "http://ec2-54-186-173-97.us-west-2.compute.amazonaws.com:8000/" + $rootScope.store + "/order/" + $scope.orders[index].id,
+            url: "http://54.214.106.54:8000/" + $rootScope.store + "/order/" + $scope.orders[index].id,
             data:""
         }).success(function (data) {
             $scope.orders.splice(index, 1);
             alert('Order Deleted Successfully');
         }).error(function (error) {
             alert('error');
-        });*/
+        });
     };
 
     $scope.pay = function (index) {
